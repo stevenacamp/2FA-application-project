@@ -45,8 +45,12 @@ app.use((req, res, next) => {
   next();
 })
 
+app.use("/", (req, res) => {
+ res.sendFile(__dirname + "/html/register/index.html");
+});
+
 // Routes
-app.use('/', require('./routes/index'));
+//app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
 const PORT = process.env.PORT || 5000;
